@@ -1,5 +1,3 @@
-using System;
-
 namespace SortingAPI.Models
 {
     public class SortingAnswers
