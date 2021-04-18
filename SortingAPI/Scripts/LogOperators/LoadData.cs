@@ -7,7 +7,7 @@ namespace SortingAPI.Scripts.LogOperators
         /// <summary>
         /// Load data from a file. We are dealing primarily only with .txt for now.
         /// </summary>
-        /// <param name="filePath">Location where the file is with extension.</param>
+        /// <param name="filePath">Location where the file is, with extension.</param>
         /// <returns>Contents of the file loaded</returns>
         public static string LoadDataFromFile(string filePath)
         {
@@ -15,7 +15,7 @@ namespace SortingAPI.Scripts.LogOperators
             {
                 // If the file doesn't exist we will load to the variable contents
                 // That we would save if the file never existed.
-                string contents = "Original Input: Nothing, Sorted Values: Nothing";
+                string contents = "Nothing Entered Yet;Nothing Entered Yet";
                 return contents;
             }
             else

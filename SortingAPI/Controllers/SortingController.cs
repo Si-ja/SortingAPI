@@ -44,7 +44,7 @@ namespace SortingAPI.Controllers
             string[] sorters = new string[] { "BubbleSort", "SelectionSort" };
             bool savedOnce = false;
 
-            // Iterate through the sorters we want to apply and collect data from transformations we can make with them\
+            // Iterate through the sorters we want to apply and collect data from transformations we can make with them
             AnswersCollector answersCollector = new();
             for (int i = 0; i < sorters.Length; i++)
             {
@@ -70,6 +70,8 @@ namespace SortingAPI.Controllers
             }
 
             // Now that we have all of our data prepared, we can display it to the user
+            // From the AnswersCollection we can pull each object with its own unique values
+            // These values can be displayed to the user. 
             return Enumerable.Range(1, sorters.Length).Select(index => new SortingAnswers
             {
                 Data = answersCollector.AnswersCollection[index - 1].Data,

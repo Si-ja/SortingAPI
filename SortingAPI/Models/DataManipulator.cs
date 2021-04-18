@@ -24,7 +24,7 @@ namespace SortingAPI.Models
         /// that we will work with further on.
         /// </summary>
         /// <param name="originalData">Original data entered by the user.
-        /// InputsParser will take care of verifiying whether that data is
+        /// InputsParser will take care of verifiying whether the data is
         /// clean and how to work with it further.</param>
         public DataManipulator(string originalData)
         {
@@ -33,6 +33,11 @@ namespace SortingAPI.Models
             this._originalValues = inputsParser.GetParsedValues();
         }
 
+        /// <summary>
+        /// Convert an array of integers into a readable string.
+        /// For this case specifically a conversion happens of user
+        /// inputs, that have already been sorted out.
+        /// </summary>
         private void ArrayToString()
         {
             this.OutputData = string.Join(" ", this._sortedValues);
@@ -40,8 +45,8 @@ namespace SortingAPI.Models
 
         /// <summary>
         /// Sort values inputted by the user.
-        /// Select from the list of methods to use
-        /// to sorting of the data. The values processed
+        /// Select from the list of methods ment for sorting
+        /// a type to use. The values processed
         /// are saved within the object, and can be reused
         /// to populate data in another object that will present
         /// the outputs to the user in an API call.
@@ -53,7 +58,7 @@ namespace SortingAPI.Models
         /// be used.</param>
         public void SortValues(string method)
         {
-            // We allso want to keep track of how long certain executions take place
+            // We allso want to keep track of how long certain executions/sortings take place
             Stopwatch stopwatch = new();
             switch (method)
             {

@@ -30,7 +30,7 @@ namespace SortingAPI.Scripts.Parser
             }
 
             this._originalData = this._originalData.Trim();
-            // Split the user entered values based on spaces they used
+            // Split the user's entered values based on spaces they used
             string[] tokens;
             tokens = originalData.Split(" ");
 
@@ -65,7 +65,8 @@ namespace SortingAPI.Scripts.Parser
                         tokens[idx] = tempStorage;
                         break;
                     }
-                    // If a value we are dealing is not a number, it's in the first position, but is a dash, it could be a negative number
+                    // If a value we are dealing with is not a number, it's in the first position, but is a dash, it could be that a negative number
+                    // Will come afterwards, therefore try to keep track of this value
                     else if (!Regex.IsMatch(character.ToString(), @"\d") & character == '-' & currentPosition == 1)
                     {
                         tempStorage += "-";
@@ -84,8 +85,9 @@ namespace SortingAPI.Scripts.Parser
                     }
                 }
             }
-            // Simplify our array and remove everything we consider to not be a number
-            tokens = tokens.Where(val => val != notNumber & val != "").ToArray();
+            // Simplify our array and remove everything we consider to not be a number, which can be missing spaces, or even single dashes which 
+            // We kept track of before
+            tokens = tokens.Where(val => val != notNumber & val != "" & val != "-").ToArray();
 
             // Because we are sure that whatever is left is an integer, we can now try to convert string to real integers
             // Do considering that some values might not be appropriate for conversion as they are just too large
@@ -100,6 +102,7 @@ namespace SortingAPI.Scripts.Parser
                 }
             }
 
+            // Save the List of data into an array
             int[] convertedItemFinal = convertedItem.ToArray();
 
             // And finally update our object with a new set of data

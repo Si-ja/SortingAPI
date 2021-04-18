@@ -3,7 +3,7 @@ namespace SortingAPI.Scripts.Sorters
     public class BubbleSort
     {
         /// <summary>
-        /// Use a standard BubbleSort to rearrange your
+        /// Use a standard Bubble Sort to rearrange your
         /// data (array of integers) into a sequential
         /// data array.
         /// </summary>
