@@ -1,9 +1,8 @@
-# Sorting API
+# Sorting API
 
-A sorting API was created using a .NET framework and C# language The essence of it, is that a user can utilize an endpoint (in total there 2)
-to give a set of integer values to it as a load and the code on the back-end will process user's data and sort the given values.
+A sorting API was created using a .NET framework and C# language. The essence of it, is that a user can utilize an endpoint (in total there are 2) to give a set of integer values to it as a load and the code on the back-end will process user's data and sort the given values.
 
-## Concept
+## Concept
 
 For simplicity, we will assume the user is running this code on their machine and currently testing the API functionality through the root of it being localhost.
 
@@ -26,6 +25,7 @@ The sorting algorithms implemented can be added or removed depending on the need
 ## Notices
 
 * The DataManipulator class might not necessarily go into the Controllers section, but this happened due to a bit different planning in the implementation strategy. If code refactoring would have been done, most likely to avoid much hassle, but make the code a bit easier to maintain - it would be more appropriate to put the said class in one of the folders in the Scripts section. 
+* Do please notice that the builds are not provided for utilization (i.e. no .exe files with the project). This is done to only operate with the scrippted code files. If you make a build, do please make modifications to how you determine where your logs.txt file will be stored. With the current solution, in the class SortingController.cs there is a variable `private readonly string pathToLogs = "UserLogs\\log.txt";` that indicates that user's inputs are saved with the text file at a particular path. Though good for testing purposes, this will not fly with the deployment build. Do note that you will have to address this.
 * The created API also has a swagger interface, which means that you can test and play around with API endpoints, without really being concerned how to enter the data into a browser window or through a `curl` command. They look something as follows:
 
 ![](https://github.com/Si-ja/SortingAPI/blob/main/VisualsDemo/Swagger.png "Swagger")

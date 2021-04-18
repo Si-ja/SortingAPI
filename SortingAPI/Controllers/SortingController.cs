@@ -12,7 +12,7 @@ namespace SortingAPI.Controllers
     public class SortingController : ControllerBase
     {
 
-        private readonly string pathToLogs = "Logs\\log.txt";
+        private readonly string pathToLogs = "UserLogs\\log.txt";
 
 
         // A path to retrieve the last user inputs that were given to the API
