@@ -14,6 +14,10 @@ A second endpoint simply would show to the user what was the last input they hav
 
 Further you can see two screenshot of the endpoints being utilized and the outputs the API produces.
 
+![](https://github.com/Si-ja/SortingAPI/blob/main/VisualsDemo/SortingInputValues.png "Sorting API")
+
+![](https://github.com/Si-ja/SortingAPI/blob/main/VisualsDemo/SortingInputLogs.png "Sorting Logs")
+
 ## Sorting Algorithms
 
 The sorting algorithms implemented can be added or removed depending on the needs. In essence, the code was arranged in such way, that you can have as many of them as required, as long as you just stick to the rule, that they process data types of `int[]` format and they are primarily controlled by the actions of DataManipulator class and SortingController class. The first has rules when they are used, while the later just calls them depending on whether we want to see a particular sorter being used or not.
@@ -23,3 +27,8 @@ The sorting algorithms implemented can be added or removed depending on the need
 * The DataManipulator class might not necesserily go into the Controllers section, but this happened due to a bit different planning in the implementation strategy. If code refactoring would have been done, most likely to avoid much hassel, but make the code a bit easier to maintain - it would be more appropriate to put the said class in one of the folders in the Scripts section. 
 * The created API also has a swagger interface, which means that you can test and play around with API endpoints, without really being concerned how to enter the data into a browser window or through a `curl` command. The look something as follows:
 
+![](https://github.com/Si-ja/SortingAPI/blob/main/VisualsDemo/Swagger.png "Swagger")
+
+![](https://github.com/Si-ja/SortingAPI/blob/main/VisualsDemo/SwaggerLogs.png "Swagger Logs")
+
+![](https://github.com/Si-ja/SortingAPI/blob/main/VisualsDemo/SwaggerSorting.png "Swagger Logs")
